@@ -1,15 +1,15 @@
-# OMIDR (Omics Integration for Dimensionality Reduction)
+# OMDIR (Omics Integration for Dimensionality Reduction)
 
-**OMIDR** (Omics Integration for Dimensionality Reduction) is a tool designed for performing feature selection on multi-omics data, mainly for transcriptomic (trans) and microbiomic (micro) data. It helps in identifying the top features from each omic type, aiding in dimensionality reduction and enhancing data analysis efficiency.
+**OMDIR** (Omics Integration for Dimensionality Reduction) is a tool designed for performing feature selection on multi-omics data, mainly for transcriptomic (trans) and microbiomic (micro) data. It helps in identifying the top features from each omic type, aiding in dimensionality reduction and enhancing data analysis efficiency.
 
 
-## OMIDR Methodology Overview
+## OMDIR Methodology Overview
 
-OMIDR utilizes an ensemble modeling approach combined with feature scoring techniques to perform feature selection on multi-omics data. The methodology can be summarized as follows:
+OMDIR utilizes an ensemble modeling approach combined with feature scoring techniques to perform feature selection on multi-omics data. The methodology can be summarized as follows:
 
 ### Model Creation and Hyperparameter Tuning:
 
-OMIDR creates three models: Support Vector Classifier (SVC), Logistic Regression, and XGBoost.
+OMDIR creates three models: Support Vector Classifier (SVC), Logistic Regression, and XGBoost.
 Hyperparameter tuning is performed using grid search with fivefold cross-validation to select the best hyperparameters for each model.
 
 ### Feature Scoring:
@@ -26,7 +26,7 @@ Hyperparameter tuning is performed using grid search with fivefold cross-validat
 
 - A weighted average of these normalized scores is computed for each feature.
 
-## OMIDR Output Files:
+## OMDIR Output Files:
 
 ## Omics Top Features Files:
   - `trans_top_features.csv`: Contains the top features from the transcriptomic data along with their importance scores.
@@ -43,21 +43,21 @@ Hyperparameter tuning is performed using grid search with fivefold cross-validat
 
 ## Installation and Usage
 
-### 1. Download OMIDR_Selector.py
+### 1. Download OMDIR_Selector.py
 
-Please download the `OMIDR.py` script from the OMIDR repository.
+Please download the `OMDIR.py` script from the OMDIR repository.
 ### 2. Naming
 - name your transcriptomic features each to start with "Trans_"
 - name your microbiomic features each to start with "Micro_"
 
 
 ## Demo
-In this demo, we employ the OMIDR method (perform_feature_selection) to select the top 50 significant features (K) for each omic data separately.
+In this demo, we employ the OMDIR method (perform_feature_selection) to select the top 50 significant features (K) for each omic data separately.
 
    ```python
 import pandas as pd
 from sklearn.model_selection import train_test_split
-from OMIDR import perform_feature_selection
+from OMDIR import perform_feature_selection
 
 # Load your multi-omics dataset (e.g., CSV format)
 dataset_path = 'path_to_your_dataset.csv'
@@ -70,6 +70,6 @@ y = data['your y_label name']
 # Split the data into training and testing sets
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
-# Perform feature selection with OMIDR (adjust parameters as needed)
+# Perform feature selection with OMDIR (adjust parameters as needed)
 perform_feature_selection(dataset_path, X_train, X_test, y_train, y_test, k=50)
 
