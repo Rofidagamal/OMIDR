@@ -12,8 +12,8 @@ OMIDR utilizes an ensemble modeling approach combined with feature scoring techn
 
 ### Model Creation and Hyperparameter Tuning:
 
-- OMIDR creates three models: Support Vector Classifier (SVC), Logistic Regression, and XGBoost.
-- Hyperparameter tuning is performed using grid search with fivefold cross-validation to select the best hyperparameters for each model.
+OMIDR creates three models: Support Vector Classifier (SVC), Logistic Regression, and XGBoost.
+Hyperparameter tuning is performed using grid search with fivefold cross-validation to select the best hyperparameters for each model.
 
 ### Feature Scoring:
 
