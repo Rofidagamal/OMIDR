@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 from sklearn.model_selection import GridSearchCV
 from sklearn.linear_model import LogisticRegression
 from sklearn.svm import SVC
-from xgboost import XGBClassifier
+from xgboost import  XGBClassifier
 
 def get_feature_importances(model, params, X, y):
     model.set_params(**params)
